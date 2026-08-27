@@ -9,7 +9,16 @@
 
 
 ## Uses
-
+## Getting Started
+1. PocketBaseで、userアカウントの作成。
+2. トークンを発行(期間 300000000s=10y)
+3. SingleFileのRest from API設定
+```
+URL: http://archiver.app.internal
+認証トークン: 発行したもの
+アーカイブ・データ・ファイル名: file
+アーカイブURLフィールド名: url
+```
 
 ## Tech Stack
 ### backend
