@@ -981,7 +981,7 @@ func init() {
 						"type": "select",
 						"values": [
 							"pending",
-							"done ",
+							"done",
 							"error"
 						]
 					},
