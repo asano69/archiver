@@ -84,7 +84,11 @@ export default function ContextNotes() {
   };
 
   return (
-    <div class="flex w-full flex-col gap-4 xl:mx-auto xl:max-w-3xl">
+    // Padding/max-width used to come from MainLayout; it now lives here
+    // since MainLayout stopped constraining <main> (see
+    // components/layout/MainLayout.jsx), so the archive viewer's iframe
+    // can fill the screen instead.
+    <div class="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-8 sm:px-6 lg:px-8 xl:max-w-3xl">
       <div class="flex items-center gap-4 mb-4">
         <h1 class="font-sans text-4xl">{contextName()}</h1>
 

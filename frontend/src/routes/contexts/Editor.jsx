@@ -303,7 +303,14 @@ function NoteForm(props) {
     // min-h-0 lets this shrink to MainLayout's available height instead
     // of growing to fit content, so the editor pane below can flex-1
     // and scroll internally rather than the whole page scrolling.
-    <form onSubmit={handleSave} class="flex h-full min-h-0 w-full flex-col gap-4">
+    // Padding/max-width used to come from MainLayout; it now lives here
+    // since MainLayout stopped constraining <main> (see
+    // components/layout/MainLayout.jsx), so the archive viewer's iframe
+    // can fill the screen instead.
+    <form
+      onSubmit={handleSave}
+      class="mx-auto flex h-full min-h-0 w-full max-w-7xl flex-col gap-4 px-4 py-8 sm:px-6 lg:px-8"
+    >
       <div class="flex items-center gap-3">
         {/* Back to this context's notes list. */}
         <A
