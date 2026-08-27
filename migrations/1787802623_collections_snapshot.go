@@ -947,7 +947,7 @@ func init() {
 						"hidden": false,
 						"id": "file2359244304",
 						"maxSelect": 0,
-						"maxSize": 0,
+						"maxSize": 500000000,
 						"mimeTypes": null,
 						"name": "file",
 						"presentable": false,
@@ -956,6 +956,34 @@ func init() {
 						"system": false,
 						"thumbs": null,
 						"type": "file"
+					},
+					{
+						"exceptDomains": null,
+						"help": "",
+						"hidden": false,
+						"id": "url4101391790",
+						"name": "url",
+						"onlyDomains": null,
+						"presentable": false,
+						"required": false,
+						"system": false,
+						"type": "url"
+					},
+					{
+						"help": "",
+						"hidden": false,
+						"id": "select2063623452",
+						"maxSelect": 0,
+						"name": "status",
+						"presentable": false,
+						"required": false,
+						"system": false,
+						"type": "select",
+						"values": [
+							"pending",
+							"done ",
+							"error"
+						]
 					},
 					{
 						"hidden": false,
