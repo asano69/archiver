@@ -26,7 +26,7 @@ func archiveCmd(app *pocketbase.PocketBase) *cobra.Command {
 				return err
 			}
 			if record.GetString("status") == archive.StatusError {
-				return fmt.Errorf("archive failed: %s", record.GetString("description"))
+				return fmt.Errorf("archive failed: %s", record.GetString("errorMessage"))
 			}
 
 			fmt.Printf("archived %s -> %s\n", rawURL, record.Id)

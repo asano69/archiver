@@ -56,7 +56,7 @@ func Run(ctx context.Context, app core.App, rawURL string) (*core.Record, error)
 	pageHTML, err := fetchHTML(ctx, rawURL)
 	if err != nil {
 		record.Set("status", StatusError)
-		record.Set("description", err.Error())
+		record.Set("errorMessage", err.Error())
 		if saveErr := app.Save(record); saveErr != nil {
 			return nil, fmt.Errorf("save failed archive record: %w", saveErr)
 		}
@@ -95,7 +95,7 @@ func finalize(app core.App, record *core.Record, pageHTML []byte, rawURL string)
 	wrappedErr := fmt.Errorf("save archive record: %w", saveErr)
 	record.Set("file", nil)
 	record.Set("status", StatusError)
-	record.Set("description", wrappedErr.Error())
+	record.Set("errorMessage", wrappedErr.Error())
 	if fallbackErr := app.Save(record); fallbackErr != nil {
 		return fmt.Errorf("%w (fallback to error status also failed: %v)", wrappedErr, fallbackErr)
 	}
