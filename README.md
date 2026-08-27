@@ -6,7 +6,7 @@
 
 
 ## Purpose
-
+- SingleFileで抽出したWebページを保存するための安全な場所
 
 ## Uses
 ## Getting Started
