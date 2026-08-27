@@ -913,44 +913,49 @@ func init() {
 						"type": "text"
 					},
 					{
-						"cascadeDelete": true,
-						"collectionId": "pbc_3961493164",
+						"autogeneratePattern": "",
 						"help": "",
 						"hidden": false,
-						"id": "relation3797779838",
-						"maxSelect": 0,
-						"minSelect": 0,
-						"name": "context",
+						"id": "text724990059",
+						"max": 0,
+						"min": 0,
+						"name": "title",
+						"pattern": "",
 						"presentable": false,
-						"required": true,
+						"primaryKey": false,
+						"required": false,
 						"system": false,
-						"type": "relation"
+						"type": "text"
 					},
 					{
 						"autogeneratePattern": "",
 						"help": "",
 						"hidden": false,
-						"id": "text2862495610",
+						"id": "text1843675174",
 						"max": 0,
 						"min": 0,
-						"name": "date",
+						"name": "description",
 						"pattern": "",
 						"presentable": false,
 						"primaryKey": false,
-						"required": true,
+						"required": false,
 						"system": false,
 						"type": "text"
 					},
 					{
 						"help": "",
 						"hidden": false,
-						"id": "json3485334036",
+						"id": "file2359244304",
+						"maxSelect": 0,
 						"maxSize": 0,
-						"name": "note",
+						"mimeTypes": null,
+						"name": "file",
 						"presentable": false,
+						"protected": false,
 						"required": false,
 						"system": false,
-						"type": "json"
+						"thumbs": null,
+						"type": "file"
 					},
 					{
 						"hidden": false,
@@ -973,10 +978,10 @@ func init() {
 						"type": "autodate"
 					}
 				],
-				"id": "pbc_3395098727",
+				"id": "pbc_2720838688",
 				"indexes": [],
 				"listRule": null,
-				"name": "notes",
+				"name": "archives",
 				"system": false,
 				"type": "base",
 				"updateRule": null,
@@ -1002,21 +1007,6 @@ func init() {
 						"type": "text"
 					},
 					{
-						"autogeneratePattern": "",
-						"help": "",
-						"hidden": false,
-						"id": "text3797779838",
-						"max": 100,
-						"min": 0,
-						"name": "context",
-						"pattern": "^[A-Za-z0-9._~-]+$",
-						"presentable": true,
-						"primaryKey": false,
-						"required": false,
-						"system": false,
-						"type": "text"
-					},
-					{
 						"hidden": false,
 						"id": "autodate2990389176",
 						"name": "created",
@@ -1037,12 +1027,10 @@ func init() {
 						"type": "autodate"
 					}
 				],
-				"id": "pbc_3961493164",
-				"indexes": [
-					"CREATE UNIQUE INDEX ` + "`" + `idx_rsoaozuhfp` + "`" + ` ON ` + "`" + `contexts` + "`" + ` (` + "`" + `context` + "`" + `)"
-				],
+				"id": "pbc_1219621782",
+				"indexes": [],
 				"listRule": null,
-				"name": "contexts",
+				"name": "tags",
 				"system": false,
 				"type": "base",
 				"updateRule": null,
