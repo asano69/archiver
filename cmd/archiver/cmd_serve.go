@@ -1,0 +1,52 @@
+package main
+
+import (
+	"fmt"
+
+	"github.com/pocketbase/pocketbase"
+	"github.com/spf13/cobra"
+
+	"github.com/asano69/archiver/internal/config"
+	"github.com/asano69/archiver/internal/serve"
+)
+
+// serveCmd defines the "archiver serve" cobra command. RunE stays a thin
+// wrapper: load config, then delegate to internal/serve for the actual
+// server implementation.
+//
+// --host/--port are optional overrides on top of config.Load()'s env-based
+// config. cmd.Flags().Changed is checked so an unset flag never clobbers a
+// value that came from ARCHIVER_SERVER_HOST/ARCHIVER_SERVER_PORT.
+func serveCmd(app *pocketbase.PocketBase) *cobra.Command {
+	cmd := &cobra.Command{
+		Use:   "serve",
+		Short: "Start the web server",
+		Args:  cobra.NoArgs,
+		RunE: func(cmd *cobra.Command, args []string) error {
+			cfg, err := config.Load()
+			if err != nil {
+				return fmt.Errorf("load config: %w", err)
+			}
+
+			if cmd.Flags().Changed("host") {
+				cfg.Server.Host, err = cmd.Flags().GetString("host")
+				if err != nil {
+					return err
+				}
+			}
+			if cmd.Flags().Changed("port") {
+				cfg.Server.Port, err = cmd.Flags().GetInt("port")
+				if err != nil {
+					return err
+				}
+			}
+
+			return serve.Run(app, cfg)
+		},
+	}
+
+	cmd.Flags().String("host", "", "Server host, overrides ARCHIVER_SERVER_HOST")
+	cmd.Flags().Int("port", 0, "Server port, overrides ARCHIVER_SERVER_PORT")
+
+	return cmd
+}

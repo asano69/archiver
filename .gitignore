@@ -1,0 +1,11 @@
+*.db
+/archiver
+
+/data/
+
+pb_data/
+node_modules/
+dist/
+tmp/
+
+
