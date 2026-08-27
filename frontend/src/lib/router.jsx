@@ -14,8 +14,10 @@ import ContextNotes from "../routes/contexts/Notes";
 export default function AppRouter() {
   return (
     <Router root={AppShell}>
-      {/* Placeholder until a proper home/context-picker page exists. */}
-      <Route path="/" component={Home} />
+      {/* Matches both "/" (nothing selected) and "/archives/:id"
+          (an archive open in the right pane); Home reads params.id
+          itself to decide what to render (see routes/Home.jsx). */}
+      <Route path={["/", "/archives/:id"]} component={Home} />
       {/* A note is addressed by its context and date, not by id: this
           keeps the URL self-descriptive and matches the "one note per
           context per day" rule enforced by the notes collection's
