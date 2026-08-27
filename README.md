@@ -4,8 +4,6 @@
 
 <img src="frontend/public/favicon.svg" width="100" align="right" />
 
-- このプロジェクトの目的は、日記アプリをつくることです。
-- このアプリは、SPA＋CSRの個人向けのアプリです。
 
 ## Purpose
 
