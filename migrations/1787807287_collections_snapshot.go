@@ -943,19 +943,18 @@ func init() {
 						"type": "text"
 					},
 					{
+						"cascadeDelete": false,
+						"collectionId": "pbc_1219621782",
 						"help": "",
 						"hidden": false,
-						"id": "file2359244304",
-						"maxSelect": 0,
-						"maxSize": 500000000,
-						"mimeTypes": null,
-						"name": "file",
+						"id": "relation1874629670",
+						"maxSelect": 10,
+						"minSelect": 0,
+						"name": "tags",
 						"presentable": false,
-						"protected": false,
 						"required": false,
 						"system": false,
-						"thumbs": null,
-						"type": "file"
+						"type": "relation"
 					},
 					{
 						"exceptDomains": null,
@@ -972,33 +971,17 @@ func init() {
 					{
 						"help": "",
 						"hidden": false,
-						"id": "select2063623452",
+						"id": "file2359244304",
 						"maxSelect": 0,
-						"name": "status",
+						"maxSize": 500000000,
+						"mimeTypes": null,
+						"name": "file",
 						"presentable": false,
+						"protected": false,
 						"required": false,
 						"system": false,
-						"type": "select",
-						"values": [
-							"pending",
-							"done",
-							"error"
-						]
-					},
-					{
-						"autogeneratePattern": "",
-						"help": "",
-						"hidden": false,
-						"id": "text370503141",
-						"max": 0,
-						"min": 0,
-						"name": "errorMessage",
-						"pattern": "",
-						"presentable": false,
-						"primaryKey": false,
-						"required": false,
-						"system": false,
-						"type": "text"
+						"thumbs": null,
+						"type": "file"
 					},
 					{
 						"hidden": false,

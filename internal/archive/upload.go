@@ -10,8 +10,7 @@ import (
 )
 
 // FromUpload saves a page snapshot that was already captured client-side
-// (e.g. by the SingleFile browser extension) as a "done" archive record,
-// skipping the monolith fetch in monolith.go entirely.
+// (e.g. by the SingleFile browser extension) as a "done" archive record.
 func FromUpload(app core.App, rawURL string, fileHeader *multipart.FileHeader) (*core.Record, error) {
 	src, err := fileHeader.Open()
 	if err != nil {
